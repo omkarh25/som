@@ -1,0 +1,58 @@
+{
+    "task_name": "FullCalendar",
+    "task_description": "Implement FullCalendar RoleViews For serendipity_BookKeeping",
+    "reference_links": [
+      {
+        "link": "https://www.npmjs.com/package/@fullcalendar/react",
+        "Reference": [
+          "Documentation for FullCalendar React"
+        ]
+      }
+    ],
+    
+    "database_relations": {
+      "description": "I need the data from 'transactions' and 'freedom' table to be presented in the calendar view",
+    "user_stories": [
+      "1. Once the user is in 'RoleViews'_'Serendipity'_'BookKeeping'_'CalendarView' view, I need an interactive calendar to view the transactions from 'transactions' and 'freedom' table based on the 'date' field in the tables.",
+      "2. The calendar should be interactive and allow the user to see the details of the transactions when clicked on a particular date."
+    ],
+    "id": "1732462616728-ms-fullcalendar",
+    "coding_instructions": [
+      "1. Use /docs, /backend , /frontend and /scripts folders to keep the files organized in this monorepo.",
+      "2. Use SOLID principles for development.",
+      "3. Use proper naming conventions for variables, functions, components, etc.",
+      "4. Dont hardcode any values. All values should be able to be configured from file or extracted to environment variables or config files.",
+      "5. Focus on getting the data to be displayed in the calendar. Only then add finishing touches for styling and responsiveness."  
+    ],
+    "techStack_specific_instructions":["1. Use shadcn/ui for components if available",
+    "2. Make app pages with shared components where possible. Be aware of the length of the pages and use abstraction to keep the code clean and reusable.",
+    "3. Use tailwind css for styling for providing liveliness to the app. Implement dark mode for the whole app."
+],
+  "project_specific_instructions": [
+    "Projects in our instances are, for 'Serendipity': 'BookKeeping', for 'DhoomStudios': 'ContentManagement', for 'Trademan': 'DocumentManagement'",
+    "Roles in our instances are, for 'BookKeeping': 'Owner', 'CAView', 'CalendarView', for 'ContentManagement': 'Owner', 'CreatorView', 'CalendarView', for 'DocumentManagement': 'Owner', 'DocManagerView', 'CalendarView'",
+    "Databases in our instances are, for 'BookKeeping': 'Kaas.db', for 'ContentManagement': 'DigitalAssets.db', for 'DocumentManagement': 'BitByBit.db'"
+  ],
+ "Cline_Instructions": [
+  "1. Use CLI to read the database files in the appropriate /DBs/{Departments}/{Projects} folder to understand the datatype and avoid datatype mismatch, if any.",
+  "2. Use CURl to check the api endpoints from /backend/api/bookkeeping/transactions and /backend/api/bookkeeping/freedom and their responses, whenever required.",
+  "3. Look for screenshots provided by user to understand UI issues and fix them.",
+  "4. Refer screenshot attached for 'RoleViews' page to understand the current UI/UX design.",
+  "5. Always use '--legacy-peer-deps' flag while installing any npm package.",
+  "6. Dont make any changes to the /backend files.",
+  "7. Dont make up any data in the frontend if you dont get data in UI, always check for backend api response related to that feature."
+  ],
+  "Bug_Fix_Instructions": [
+   "1. There is typo for 'Serendipity' throughout the app. Fix it as and when you encounter it",
+  "2. I need dark mode for the whole app. Its implmented partially for some components. Implement it for the whole app.",
+  "3. I need one more dropdown for 'Available Roles' in 'RoleViews' page, instead of cards as it is now. Make sure to keep the existing roles for 'Available Roles' as it is. Just add one more dropdown with the same values as cards have."
+  ],
+  "Expected_file_changes": [
+    "frontend/src/app/roleviews/calendarview/page.tsx",
+    "frontend/src/components/ui/theme-toggle.tsx",
+    "frontend/src/app/globals.css"
+  ]
+}
+}
+
+

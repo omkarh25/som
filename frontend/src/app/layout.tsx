@@ -1,18 +1,11 @@
+'use client';
+
+import { ThemeProvider } from 'next-themes';
 import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Sidebar from '@/components/ui/sidebar';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'SOM - Office Management System',
-  description: 'SOM is an Office management system to simplify the management of personal and professional duties',
-};
 
 /**
- * Root layout component that wraps all pages
- * Provides consistent structure with sidebar and main content area
+ * Root layout component that wraps the entire application
+ * Provides theme context for dark/light mode support
  */
 export default function RootLayout({
   children,
@@ -20,14 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 p-8 bg-gray-100">
-            {children}
-          </main>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -98,7 +98,7 @@ git commit -m "Initial commit"
 
 Add the remote repo:
 ```bash
-git remote add origin <remote_repo_url>
+git remote add origin https://github.com/omkarh25/som.git
 git push -u origin main
 ```
 Create Staging and Development branches:
